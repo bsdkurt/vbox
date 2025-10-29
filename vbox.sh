@@ -246,6 +246,7 @@ importVM() {
     --os-variant=$_ostype \
     --network network=default,model=${VM_NIC:-e1000} \
     --graphics vnc,listen=0.0.0.0 \
+    --memorybacking locked=on \
     --noautoconsole  --import --check all=off --machine virt --noacpi --boot loader=$__LOADER
   else
     $_SUDO_VIR_  virt-install \
@@ -257,6 +258,7 @@ importVM() {
     --os-variant=$_ostype \
     --network network=default,model=${VM_NIC:-e1000} \
     --graphics vnc,listen=0.0.0.0 \
+    --memorybacking locked=on \
     --noautoconsole  --import  --check all=off
   fi
 
